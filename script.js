@@ -59,6 +59,9 @@ const listener = function () {
     if (keyClass === 'equal-sign' && y !== '') {
       result = calculate(operator, x, y);
       displayInput(result);
+      activeVariable = 'x';
+      x = result;
+      y = '';
     }
 
     if (keyClass === 'all-clear') {
