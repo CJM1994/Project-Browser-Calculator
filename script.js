@@ -1,17 +1,17 @@
 const add = function (x, y) {
-  return x + y;
+  return Number(x) + Number(y);
 }
 
 const subtract = function (x, y) {
-  return x - y;
+  return Number(x) - Number(y);
 }
 
 const multiply = function (x, y) {
-  return x * y;
+  return Number(x) * Number(y);
 }
 
 const divide = function (x, y) {
-  return x / y;
+  return Number(x) / Number(y);
 }
 
 const calculate = function (operator, x, y) {
@@ -71,6 +71,17 @@ const listener = function () {
       result = 0;
       operator = '';
       displayInput('0');
+    }
+
+    if (keyClass === 'decimal') {
+      if (activeVariable === 'x' && !x.includes('.')) {
+        x += '.';
+        displayInput(x);
+      }
+      else if (activeVariable === 'y' && !y.includes('.')) {
+        y += '.';
+        displayInput(y);
+      }
     }
 
   })
