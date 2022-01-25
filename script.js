@@ -28,6 +28,13 @@ const displayInput = function (input) {
   display.value = input;
 }
 
+// round result from hitting equal-sign to 4 decimals
+const displayFinalResult = function (input) {
+  const display = document.querySelector('.calculator-display');
+  output = Math.floor(Number(input) * 10000) / 10000;
+  display.value = output;
+}
+
 const listener = function () {
 
   let x = '';
@@ -58,7 +65,7 @@ const listener = function () {
 
     if (keyClass === 'equal-sign' && y !== '') {
       result = calculate(operator, x, y);
-      displayInput(result);
+      displayFinalResult(result);
       activeVariable = 'x';
       x = result;
       y = '';
